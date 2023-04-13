@@ -5,10 +5,17 @@
     "manifest_version": 3,
     "author": "Kadhirravan Ramesh",
     "action":{
-
+        "default_icon": {
+            "48": "assets/cic_logo_48.png"
+          }
     },
+    "icons": {
+        "16": "assets/cic_logo_16.ico",
+        "48": "assets/cic_logo_48.png",
+        "128": "assets/cic_logo_128.ico"
+      },
     "permissions": [
-        "tabs","activeTab", "scripting","downloads"
+        "tabs","activeTab", "scripting","downloads","contextMenus"
     ],
 
     "background": {
@@ -16,5 +23,12 @@
         },
     "content_security_policy": {
         "extension_pages": "script-src 'self'; object-src 'self';"
-    }
+    },
+    "web_accessible_resources": [{
+        "resources": ["js/script.js"],
+        "matches": ["<all_urls>"]
+      }],
+      "externally_connectable": {
+        "matches": ["https://leetcode.com/*"]
+      }
 }
